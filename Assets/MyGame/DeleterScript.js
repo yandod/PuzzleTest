@@ -7,7 +7,9 @@ function Start () {
 }
 
 function Update () {
-
+	var text:TextMesh = this.transform.GetChild(0).gameObject.GetComponent('TextMesh');
+	var c:int = blocks_in_area.Count;
+	text.text = c.ToString();
 }
 
 function OnTriggerStay (other : Collider) {
@@ -25,13 +27,21 @@ function OnTriggerStay (other : Collider) {
 		for (var key in this.blocks_in_area.Keys) {
 			GameObject.Destroy(this.blocks_in_area[key]);
 		}
-		this.blocks_in_area = new Hashtable();
 		var blocks = GameObject.FindGameObjectsWithTag('StaticBlock');
 		for (var sblock:GameObject in blocks) {
-			if (sblock.transform.position.y > this.transform.position.y) {
-				sblock.transform.position.y -= 1;
+		//sblock.transform.TransformPoint(sblock.transform.position).y
+			if (
+				sblock.transform.position.y
+				//sblock.transform.parent.transform.TransformPoint(sblock.transform.position).y 
+				>
+				this.transform.position.y
+				//this.transform.TransformPoint(this.transform.position).y
+			) {
+				//sblock.transform.position += sblock.transform.parent.transform.TransformDirection(Vector3.down);
+				sblock.transform.position += Vector3.down;
 			}
 		}
+		this.blocks_in_area = new Hashtable();
 	}
 }
 
@@ -42,3 +52,13 @@ function OnTriggerExit (other : Collider) {
 	var idx = "k" + Mathf.FloorToInt(other.gameObject.transform.position.x);
 	this.blocks_in_area.Remove(idx);
 }
+
+function OnCollisionExit(other : Collision) {
+	if (!other.gameObject.CompareTag('StaticBlock')) {
+		return;
+	}
+	Debug.Log('block Exit');
+	var idx = "k" + Mathf.FloorToInt(other.gameObject.transform.position.x);
+	this.blocks_in_area.Remove(idx);
+}
+	

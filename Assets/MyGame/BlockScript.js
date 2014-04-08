@@ -8,6 +8,10 @@ function Start () {
 
 function Update () {
 
+	if (this.transform.GetChildCount == 0) {
+		Destroy(this);
+	}
+
 	if (!this.is_moving) {
 		return;
 	}
@@ -52,10 +56,6 @@ function OnCollisionEnter (other: Collision) {
 	for ( var i:int = 0; i < childCount; i++) {
 		this.transform.GetChild(i).tag = 'StaticBlock';
 	}
-	//this.transform.GetChild(0).tag = 'StaticBlock';
-	//this.transform.GetChild(1).tag = 'StaticBlock';
-	//this.transform.GetChild(2).tag = 'StaticBlock';
-	//this.transform.GetChild(3).tag = 'StaticBlock';
 	
 	this.transform.position =
 		Vector3(
@@ -63,5 +63,5 @@ function OnCollisionEnter (other: Collision) {
 			Mathf.Floor(this.transform.position.y) + 0.5,
 			this.transform.position.z
 		);
-	Debug.Log('Block Landed.');
+	//Debug.Log('Block Landed.');
 }
