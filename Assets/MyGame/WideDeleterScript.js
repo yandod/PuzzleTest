@@ -57,14 +57,15 @@ function Update () {
 	}	
 	
 	//sort phase
+	var target_line_offset = 0;
 	for (var target_line:int in target_lines) {
 		for (var sblock:GameObject in blocks) {
 			var yidx3 = Mathf.FloorToInt(sblock.transform.position.y) + 10;
-			if (yidx3 > target_line) {
+			if (yidx3 > (target_line - target_line_offset)) {
 				sblock.transform.position += Vector3.down;
 			}
 		}	
-
+		target_line_offset++;
 	}
 
 }
