@@ -11,13 +11,13 @@ function Start () {
 	this.block_types.Add('LBlock');
 	this.block_types.Add('IBlock');
 	
-	for (var i = 0 ; i < 20; i++) {
-		Instantiate(
-			Resources.Load('deleter', GameObject),
-			new Vector3(0, -9.5 + i, -0.8),
-			Quaternion.identity
-		);
-	}
+	//for (var i = 0 ; i < 20; i++) {
+	//	Instantiate(
+	//		Resources.Load('deleter', GameObject),
+	//		new Vector3(0, -9.5 + i, -0.8),
+	//		Quaternion.identity
+	//	);
+	//}
 }
 
 function Update () {

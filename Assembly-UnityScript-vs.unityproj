@@ -50,6 +50,7 @@
      <Compile Include="Assets\MyGame\DeleterScript.js" />
      <Compile Include="Assets\MyGame\RetryScript.js" />
      <Compile Include="Assets\MyGame\SpawnerScript.js" />
+     <Compile Include="Assets\MyGame\WideDeleterScript.js" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

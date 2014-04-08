@@ -38,7 +38,7 @@ function OnTriggerStay (other : Collider) {
 				//this.transform.TransformPoint(this.transform.position).y
 			) {
 				//sblock.transform.position += sblock.transform.parent.transform.TransformDirection(Vector3.down);
-				//sblock.transform.position += Vector3.down;
+				sblock.transform.position += Vector3.down;
 			}
 		}
 		this.blocks_in_area.Clear();
