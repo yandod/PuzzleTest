@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{3E66E1BA-4541-1925-37CB-60FCBEC3023D}") = "PuzzleTest", "Assembly-CSharp.csproj", "{B9DF207E-9BF7-933C-797A-EC3EE4926405}"
 EndProject
+Project("{3E66E1BA-4541-1925-37CB-60FCBEC3023D}") = "PuzzleTest", "Assembly-CSharp-Editor.csproj", "{A1C99998-12DB-8BC3-DF25-0DCB0AB64F14}"
+EndProject
 Project("{3E66E1BA-4541-1925-37CB-60FCBEC3023D}") = "PuzzleTest", "Assembly-UnityScript.unityproj", "{7FD376ED-E155-0A89-6E07-998FA3B1F8DB}"
 EndProject
 Project("{3E66E1BA-4541-1925-37CB-60FCBEC3023D}") = "PuzzleTest", "Assembly-UnityScript-Editor.unityproj", "{9F4B6575-E541-7CFC-6AFF-D3A4269CDF6D}"
@@ -17,6 +19,10 @@ Global
 		{B9DF207E-9BF7-933C-797A-EC3EE4926405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9DF207E-9BF7-933C-797A-EC3EE4926405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9DF207E-9BF7-933C-797A-EC3EE4926405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C99998-12DB-8BC3-DF25-0DCB0AB64F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C99998-12DB-8BC3-DF25-0DCB0AB64F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C99998-12DB-8BC3-DF25-0DCB0AB64F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C99998-12DB-8BC3-DF25-0DCB0AB64F14}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7FD376ED-E155-0A89-6E07-998FA3B1F8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FD376ED-E155-0A89-6E07-998FA3B1F8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FD376ED-E155-0A89-6E07-998FA3B1F8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +35,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																						GlobalSection(MonoDevelopProperties) = preSolution
+																								GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
