@@ -27,7 +27,9 @@ function Update () {
 	for (var sblock:GameObject in blocks) {
 		var xidx = Mathf.FloorToInt(sblock.transform.position.x) + 4;
 		var yidx = Mathf.FloorToInt(sblock.transform.position.y) + 10;
-		totals[yidx]++;
+		if (yidx >= 0 && yidx <= 20 && xidx >= 0 && xidx < 8) {
+		    totals[yidx]++;
+		}
 	}
 	
 	//summary phase
@@ -48,9 +50,10 @@ function Update () {
 	//destroy phase
 	target_lines.Sort();
 	for (var sblock:GameObject in blocks) {
+		var xidx2 = Mathf.FloorToInt(sblock.transform.position.x) + 4;
 		var yidx2 = Mathf.FloorToInt(sblock.transform.position.y) + 10;
 		for (var target_line in target_lines) {
-			if (target_line == yidx2) {
+			if (target_line == yidx2 && xidx >= 0 && xidx < 8) {
 				Destroy(sblock);
 			}
 		}
@@ -62,7 +65,11 @@ function Update () {
 		for (var sblock:GameObject in blocks) {
 			var yidx3 = Mathf.FloorToInt(sblock.transform.position.y) + 10;
 			if (yidx3 > (target_line - target_line_offset)) {
-				sblock.transform.position += Vector3.down;
+				//sblock.transform.position += Vector3.down;
+				sblock.AddComponent('Rigidbody');
+				var rb:Rigidbody = sblock.GetComponent('Rigidbody');
+				//rb.constraints = RigidbodyConstraints.FreezeAll ^ RigidbodyConstraints.FreezePositionY;
+				//sblock.rigidbody.constraints = RigidbodyConstraints.FreezeAll ^ RigidbodyConstraints.FreezePositionY;
 			}
 		}	
 		target_line_offset++;

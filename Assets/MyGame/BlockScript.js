@@ -1,6 +1,7 @@
 ﻿#pragma strict
 
 	var is_moving:boolean = true;
+	var is_nutral:boolean = true;
 
 function Start () {
 	this.is_moving = true;
@@ -23,16 +24,23 @@ function Update () {
 			this.transform.position.z
 		);
 
-	if (Input.GetKeyDown(KeyCode.RightArrow)) {
+	if (Input.GetAxis('Horizontal') > 0 && this.is_nutral) {
 		this.transform.position += Vector3.right; 
+		this.is_nutral = false;
 	}
 	
-	if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+	if (Input.GetAxis('Horizontal') < 0 && this.is_nutral) {
 		this.transform.position += Vector3.left;
+		this.is_nutral = false;
 	}
 	
-	if (Input.GetKeyDown(KeyCode.UpArrow)) {
+	if (Input.GetAxis('Vertical') > 0 && this.is_nutral) {
 		this.transform.Rotate(0, 0, 90);
+		this.is_nutral = false;
+	}
+	
+	if (Input.GetAxis('Horizontal') == 0 && Input.GetAxis('Vertical') == 0) {
+		this.is_nutral = true;
 	}
 	
 	this.transform.position += Vector3.down * 0.1;
