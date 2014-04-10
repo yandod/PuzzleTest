@@ -1,13 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyGame/BlockScript.js">
     <Files>
-      <File FileName="Assets/MyGame/BlockScript.js" Line="75" Column="2" />
-      <File FileName="Assets/MyGame/SpawnerScript.js" Line="1" Column="1" />
-      <File FileName="Assets/MyGame/BlockScript.js" Line="37" Column="33" />
-      <File FileName="Assets/MyGame/RetryScript.js" Line="1" Column="1" />
-      <File FileName="Assets/MyGame/DeleterScript.js" Line="1" Column="1" />
-      <File FileName="Assets/MyGame/WideDeleterScript.js" Line="56" Column="53" />
+      <File FileName="Assets/MyGame/BlockScript.js" Line="48" Column="12" />
+      <File FileName="Assets/MyGame/SpawnerScript.js" Line="34" Column="5" />
+      <File FileName="Assets/MyGame/RetryScript.js" Line="23" Column="68" />
+      <File FileName="Assets/MyGame/DeleterScript.js" Line="30" Column="3" />
+      <File FileName="Assets/MyGame/WideDeleterScript.js" Line="58" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

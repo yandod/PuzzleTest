@@ -24,26 +24,30 @@ function Update () {
 			this.transform.position.z
 		);
 
-	if (Input.GetAxis('Horizontal') > 0 && this.is_nutral) {
+	if (Input.GetKeyDown(KeyCode.RightArrow) || (Input.GetAxis('Horizontal') > 0 && this.is_nutral)) {
 		this.transform.position += Vector3.right; 
 		this.is_nutral = false;
 	}
 	
-	if (Input.GetAxis('Horizontal') < 0 && this.is_nutral) {
+	if (Input.GetKeyDown(KeyCode.LeftArrow)||(Input.GetAxis('Horizontal') < 0 && this.is_nutral)) {
 		this.transform.position += Vector3.left;
 		this.is_nutral = false;
 	}
 	
-	if (Input.GetAxis('Vertical') > 0 && this.is_nutral) {
+	if ( (Input.GetAxis('Vertical') > 0 && this.is_nutral)|| Input.GetButtonDown('Jump') ) {
 		this.transform.Rotate(0, 0, 90);
 		this.is_nutral = false;
 	}
 	
-	if (Input.GetAxis('Horizontal') == 0 && Input.GetAxis('Vertical') == 0) {
+	if (Input.GetAxis('Horizontal') == 0) {
 		this.is_nutral = true;
 	}
 	
-	this.transform.position += Vector3.down * 0.1;
+	var spd = 0.1;
+	if (Input.GetKey(KeyCode.DownArrow)) {
+		spd = 0.3;
+	}
+	this.transform.position += Vector3.down * spd;
 	
 	if (this.transform.position.y < -15) {
 		this.transform.position.y = 13;

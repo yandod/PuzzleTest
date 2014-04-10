@@ -27,7 +27,7 @@ function Update () {
 	for (var sblock:GameObject in blocks) {
 		var xidx = Mathf.FloorToInt(sblock.transform.position.x) + 4;
 		var yidx = Mathf.FloorToInt(sblock.transform.position.y) + 10;
-		if (yidx >= 0 && yidx <= 20 && xidx >= 0 && xidx < 8) {
+		if (yidx >= 0 && yidx < 20 && xidx >= 0 && xidx < 8) {
 		    totals[yidx]++;
 		}
 	}
@@ -55,9 +55,16 @@ function Update () {
 		for (var target_line in target_lines) {
 			if (target_line == yidx2 && xidx >= 0 && xidx < 8) {
 				Destroy(sblock);
+				if (xidx2 == 4 && target_lines.length > 1) {
+				var instance : GameObject = Instantiate(
+					Resources.Load('CrashEffect', GameObject),
+					new Vector3(0, yidx -9, -1),
+					Quaternion.identity
+				);
+				}
 			}
 		}
-	}	
+	}
 	
 	//sort phase
 	var target_line_offset = 0;
@@ -66,8 +73,16 @@ function Update () {
 			var yidx3 = Mathf.FloorToInt(sblock.transform.position.y) + 10;
 			if (yidx3 > (target_line - target_line_offset)) {
 				//sblock.transform.position += Vector3.down;
-				sblock.AddComponent('Rigidbody');
+				if (sblock.GetComponent('Rigidbody')==null) {
+					sblock.AddComponent('Rigidbody');
+				}
 				var rb:Rigidbody = sblock.GetComponent('Rigidbody');
+				
+				//if (target_lines.length == 1) {
+				//	rb.constraints = RigidbodyConstraints.FreezeAll ^ RigidbodyConstraints.FreezePositionY;
+				//} else {
+				//	rb.constraints = RigidbodyConstraints.None;
+				//}
 				//rb.constraints = RigidbodyConstraints.FreezeAll ^ RigidbodyConstraints.FreezePositionY;
 				//sblock.rigidbody.constraints = RigidbodyConstraints.FreezeAll ^ RigidbodyConstraints.FreezePositionY;
 			}
